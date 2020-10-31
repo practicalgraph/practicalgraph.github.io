@@ -116,4 +116,4 @@ analytics:
     tracking_id: 'UA-181302380-1'
     anonymize_ip: false # default
 
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.20.2"
