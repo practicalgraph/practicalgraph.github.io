@@ -1,0 +1,512 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>An Introduction to Graph Query Languages - Practical Graph</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Practical Graph">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Practical Graph">
+<meta property="og:title" content="An Introduction to Graph Query Languages">
+<meta property="og:url" content="http://localhost:4000/databases/query">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/databases/query">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Practical Graph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo-small.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Practical Graph
+          <span class="site-subtitle">Practical advice on all things graph</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/databases" itemprop="item"><span itemprop="name">Databases</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">An Introduction to Graph Query Languages</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/databases"><span class="nav__sub-title">Intro to the Graph Ecosystem</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/databases/frameworks"><span class="nav__sub-title">Graph Frameworks</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/databases/db"><span class="nav__sub-title">Graph Databases</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/databases/query"><span class="nav__sub-title">Query Languages</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="An Introduction to Graph Query Languages">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">An Introduction to Graph Query Languages
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>In the previous section, we reviewed the graph database ecosystem and got an understanding of the different types of options available, frameworks, RDF Triplestores, and labeled property graph databases.  In this section, we are going to provide an overview of the more common query languages used by graph databases and examine what each query language looks like using our “Friend of a Friend” use case.</p>
+
+<p>In the RDBMS world, SQL is the standard query language that is supported by most to all databases on the market. In the graph database world, the immaturity of the technology and ecosystem has led to a lack of a single standard query language support.  While there are a few emerging standards out there, many database vendors either support multiple different query languages, such as AWS Neptune or Neo4j or have created their custom query languages to fill gaps in these standards, such as DGraph and OrientDB.</p>
+
+<p>There is not a graph query language for property model graphs that is supported by the majority of the databases on the market.  Due to the fractured nature of the space, there have been several attempts of the recent years to create a unified graph query language managed as part of an international standards bureau, in much the same way that SQL is for relational databases.  At the time of writing this book, there is a new proposal underway to formulate a new standard property graph query language called GQL.  GQL is based on three current query languages, PGQL from Oracle, G-Core from the Linked Data Benchmark Council, and Cypher from Neo4j .<br />
+While there is active work being done to come to agreement on a standard and formalize this for submission to a standards board, at this time, there is not a concrete implementation of what this language might look like or how it may work, but it will be interesting to see how this proposal develops over time.</p>
+
+<p>This lack of standardization means that your chosen database option dictates the language or languages that you can use to query that database.  While this is not necessarily the ideal scenario, it is the reality in the industry today.  So, if the database drives my choice, then why even go through the options?  While it is true that you will only have a limited set of options to choose from once you have decided on a database it is still valuable that we understand the different options on the market today and their strength and weaknesses since these aspects may be a determining factor when choosing a final database technology.</p>
+
+<h2 id="sparql">SPARQL</h2>
+<p>SPARQL  (SPARQL Protocol and RDF Query Language) is the query language and data access protocol for the semantic web.  SPARQL is a W3C (World Wide Web Consortium) standard and the query language for RDF (Resource Description Framework) data and is supported by most RDF TripleStore databases.  SPARQL allows us to query and manipulate data using triples, as well as perform complex operations such as joins, projections, and pattern matching.  Using our “friends of friends” graph from earlier, let’s take a look at some SPARQL queries:</p>
+
+<p><img src="/assets/images/pages/databases/foff_triple.png" alt="SPARQL Graph" /></p>
+
+<p>What would a SPARQL query look like to answer, Find the name of all of Bob’s friends?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PREFIX sc:  &lt;http://schema.org/&gt; 
+SELECT ?friendName WHERE 
+{
+http://bob sc:isFriendOf ?f . 
+?f sc:name ?friendName.
+}
+
+Results Returned: [Jane, Tom]
+</code></pre></div></div>
+
+<p>Let’s extend that query a bit to Find the name of all Bob’s friends that live in New York?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PREFIX sc:  &lt;http://schema.org/&gt; 
+
+SELECT ?friendName WHERE 
+{ 
+http://bob sc:isFriendOf ?f . 
+?f sc:livesIn livesIn:”New York” . 
+?f sc:name ?friendName .
+}
+</code></pre></div></div>
+
+<p>Results Returned: [Jane]</p>
+
+<p>The important takeaway is to see how SPARQL expresses the subject-object-predicate nature of the triple, not the exact SPARQL syntax used.  While a few labeled property graph databases support SPARQL, in addition to another language, such as AWS Neptune, this support in labeled property graphs is not common due to fundamental differences in the RDF and labeled property model data structures.</p>
+
+<h3 id="cypheropencypher">Cypher/openCypher</h3>
+<p>Cypher is a graph query language that was originally developed by Neo4j for use in their database.  In October 2015, they released Cypher as an open language specification via the openCypher  project.  openCypher is currently implemented, either in part or wholly, by 11 different vendors (as of Nov. 2018) including Neo4j , as well as SAP HANA , AgenesGraph  and Memgraph .<br />
+NOTE: In the context of this book, when I refer to Cypher I am specifying to content that is inclusive of both Cypher, which is Neo4j’s implementation, or other openCypher implementations.
+Cypher is a declarative graph-based query language that aims to provide an easily readable mechanism to traverse graphs using an expressive, efficient and intuitive syntax.  Cypher traversals are made up of a variety of clauses and projections that feels very intuitive to users familiar with SQL.  While the language is not identical, many of the usual patterns and practices in SQL are also available to Cypher users.<br />
+Let’s take a look at some queries using Cypher in our “friends of friends” graph:</p>
+
+<p><img src="/assets/images/pages/databases/lpg_friends.png" alt="LPG Graph" /></p>
+
+<p>As we did with SPARQL, let’s examine the query, Find the name of all of Bob’s friends?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH n (me:Person)-[:is_friend_of]-&gt;
+(myFriend:Person) 
+WHERE me.name=’Bob’
+RETURN myFriend.name
+</code></pre></div></div>
+
+<p>Results Returned: [Jane, Tom]</p>
+
+<p>And extending that query to Find the name of all Bob’s friends who live in New York?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MATCH n (me:Person)-[:is_friend_of]-&gt;
+(myFriend:Person) 
+WHERE me.name=’Bob’
+    AND myFriend.lives_in=’New York’
+RETURN myFriend.name
+
+Results Returned: [Jane]
+</code></pre></div></div>
+
+<p>In the queries above, we can see the declarative nature of the Cypher syntax and its similarity to SQL.  When you write a Cypher traversal, you are declaring the pattern of the data you would like returned.  The underlying engine then takes this declaration and determines the optimal solution in which to traverse the graph similarly to how a SQL engine works in your RDBMS system.  This declarative nature of Cypher provides an easy to use query language but can encounter some issues working on complex traversals where the engine may struggle to optimize the traversal.</p>
+
+<p>2.2.3	Apache TinkerPop Gremlin
+Gremlin is the query language created by the Apache TinkerPop  project.  At the time of writing this in November 2018, there are currently 22 Tinkerpop-enabled databases on the market, including some of the big players that implement it as their primary query language such as Datastax Enterprise Graph , Azure CosmosDB , AWS Neptune , and JanusGraph .   Several other vendors implement Gremlin as an additional query language to their native one such as StarDog , OrientDB , and Neo4j .</p>
+
+<p>Gremlin traversals are composed of steps, each of which performs either a map, flatMap, branch, filter, or sideEffect operation on the data.  Gremlin is a lazily evaluated language, so each step builds upon the output of the previous step.  It is helpful to think of Gremlin as a stream processor with each step performing a single operation on the stream of data.  Each step takes in data output by the previous step, performs some action on that data, and passes that data on to the next step.  Using this basic paradigm, you can compose extremely complex operations with Gremlin. 
+Let’s take a look at some queries written in Gremlin.</p>
+
+<p><img src="/assets/images/pages/databases/lpg_friends.png" alt="LPG Graph" /></p>
+
+<p>As we did with both SPARQL and Cypher, let’s see the Gremlin query, Find the name of all of Bob’s friends?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g.V()
+.has(‘person’, ‘name’, ‘Bob’)
+.out(‘is_friend_of’)
+.values(‘name’)
+
+Results Returned: [Jane, Tom]
+</code></pre></div></div>
+
+<p>Now let’s look at the query, Find the name of all Bob’s friends that live in New York?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g.V()
+.has(‘person’, ‘name’, ‘Bob’)
+.out(‘is_friend_of’)
+.has(‘person’, ‘lives_in’, ‘New York’)
+.values(‘name’)
+
+Results Returned: [Jane]
+</code></pre></div></div>
+
+<p>As we can see from the examples Gremlin queries, Gremlin does not look similar to the SPARQL or Cypher queries but appear much more like a programming language.  Gremlin is a functional language and allows you to step through your graph to express complex traversals using either an imperative or declarative syntax.
+Using the imperative syntax of Gremlin, as shown above, is the most common.  Throughout this book, we will use the imperative Gremlin syntax, but it is good to know that the declarative syntax exists.  Below is the query, “Find the name of all Bob’s friends that live in New York?,”  written in Gremlin’s declarative syntax.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g.V().match(
+    __.as(‘a’).has(‘name’, ‘Bob’).as(‘b’),
+    __.as(‘b’).out(‘is_friend_of’).as(‘c’),
+    __.as(‘c’).has(‘person’, ‘lives_in’, ‘New York’).as(‘d’)
+).select(‘d’).by(‘name’)
+</code></pre></div></div>
+
+<p>When working with declarative Gremlin queries, you specify a pattern or patterns that you want to find within your graph, and the underlying compile and runtime optimizers determine how to execute the query.  With either query methodology, you can efficiently traverse through your graph to find and manipulate data within your graph.</p>
+
+<h3 id="graphql">GraphQL</h3>
+<p>GraphQL  was initially developed by Facebook and was designed to serve as an alternative data query pattern for web services.  GraphQL is a data query and manipulation language that provides flexible and extensible queries for APIs.  GraphQL queries are specified using JSON-like strings of data that define the structure and content of the data required.  These queries allow the client to specify only the fields and structures that they need to be returned by the query, thereby minimizing the amount of potential data transfer from the client.<br />
+As in the previous sections, we are going to use our “friends of friends” graph to demonstrate a GraphQL query.</p>
+
+<p><img src="/assets/images/pages/databases/lpg_friends.png" alt="LPG Graph" /></p>
+
+<p>Let’s see what the GraphQL query, “Find the name of all of Bob’s friends?.”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{  
+Person(name: ‘Bob’) {
+    is_friend_of {
+        name
+    }
+}
+}
+</code></pre></div></div>
+
+<p>Results Returned: [Jane, Tom]</p>
+
+<p>Now let’s look at the query, “Find the name of all Bob’s friends that live in New York?”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{  
+Person(name: ‘Bob’) {
+    is_friend_of (lives_in: ‘New York’ {
+        name
+    }
+}
+}
+
+Results Returned: [Jane]
+</code></pre></div></div>
+
+<p>GraphQL  is often referred to as a graph query language and is even implemented as such by several graph databases such as DGraph .  While arguably not a graph query language in the same way as Gremlin or Cypher, there are many graph databases, such as Neo4j  and ArangoDB  that provide tight integrations between their databases and GraphQL to deliver a simpler mechanism for creating web service endpoints on top of their databases.</p>
+
+<h3 id="sql-derivatives">SQL Derivatives</h3>
+<p>Some graph databases have created their own custom SQL-inspired graph query languages, such as ArangoDB  AQL, or have extended SQL to handle graph constructs, such as OrientDB .  These efforts have intended to extend and enhance a popular query language standard to allow for easier developer adoption and to minimize the learning curve.  Each of these offerings is optimized to leverage the unique features of that specific database. We are not going to review an example here due to the vast numbers that exist and the fact that each option has its unique syntax.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/practicalgraph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://bit.ly/38a1fV5" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-book" aria-hidden="true"></i> Book - Graph Databases in Action</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Practical Graph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

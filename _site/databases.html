@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Practical Graph - Page 2</title>
+<!-- begin _includes/seo.html --><title>An Introduction to the Graph Ecosystem - Practical Graph</title>
 <meta name="description" content="">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Practical Graph">
-<meta property="og:title" content="Practical Graph">
-<meta property="og:url" content="http://localhost:4000/blog/page2/">
+<meta property="og:title" content="An Introduction to the Graph Ecosystem">
+<meta property="og:url" content="http://localhost:4000/databases">
 
 
 
@@ -35,10 +35,8 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/page2/">
+<link rel="canonical" href="http://localhost:4000/databases">
 
-
-  <link rel="prev" href="http://localhost:4000/">
 
 
 
@@ -99,7 +97,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -157,6 +155,30 @@
 
 
   
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">An Introduction to the Graph Ecosystem</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -181,7 +203,7 @@
     
       <li>
         
-          <a href="/"><span class="nav__sub-title">Home</span></a>
+          <a href="/databases"><span class="nav__sub-title">Intro to the Graph Ecosystem</span></a>
         
 
         
@@ -189,7 +211,7 @@
     
       <li>
         
-          <a href="/databases/"><span class="nav__sub-title">Graph Ecosystem/Databases</span></a>
+          <a href="/databases/frameworks"><span class="nav__sub-title">Graph Frameworks</span></a>
         
 
         
@@ -197,7 +219,7 @@
     
       <li>
         
-          <a href="/posts/"><span class="nav__sub-title">Blog</span></a>
+          <a href="/databases/db"><span class="nav__sub-title">Graph Databases</span></a>
         
 
         
@@ -205,15 +227,7 @@
     
       <li>
         
-          <a href="/about/"><span class="nav__sub-title">About</span></a>
-        
-
-        
-      </li>
-    
-      <li>
-        
-          <a href="/contributing/"><span class="nav__sub-title">Contributing</span></a>
+          <a href="/databases/query"><span class="nav__sub-title">Query Languages</span></a>
         
 
         
@@ -228,144 +242,60 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="An Introduction to the Graph Ecosystem">
     
-      <h1 id="page-title" class="page__title"></h1>
     
-    
-
-<h3 class="archive__subtitle">Recent Posts</h3>
-
-
-
-
-<div class="entries-list">
-  
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/blog/post-standard/" rel="permalink">Post: Standard
-</a>
-      
-    </h2>
-    
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">An Introduction to the Graph Ecosystem
+</h1>
+          
 
-  <p class="page__meta">
-    
 
-    
-
-    
-      
+        </header>
       
 
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
+      <section class="page__content" itemprop="text">
         
-          4 minute read
+        <p>The graph ecosystem is one of, if not the fastest growing sector of the database market, according to <a href="https://db-engines.com/en/ranking_categories" target="_blank">DB-Engines.com</a>. In the past few years, the number of new offerings in the graph database space is mind boggling and difficult to track. For people new to the graph database space, trying to understand what each one does and where it fits, is a daunting task. Our hope here to provide a high-level overview of the graph ecosystem to offer some context around what every kind of databases does well and how it fits in the overall landscape. We will examine each of the options in enough detail so that you understand how they work, what they do, and why you might or might not chose them for your project.</p>
+
+<h2 id="database-versus-frameworks">Database versus Frameworks</h2>
+<p>At the highest level, the graph  ecosystem is divided into graph frameworks and graph databases. While there is no universally accepted definition of what constitutes a framework versus a database, we are going to use the following meanings:</p>
+
+<p><a href="/databases/frameworks">Graph Frameworks</a> - Systems and tools where data is loaded from an independent data source such as an RDBMS, HDFS, or text file by the application or user. Data is then loaded and processed using graph structures and constructs frequently on a distributed analytics platform such as Hadoop or Spark.</p>
+
+<p><a href="/databases/db">Graph Databases</a> - Systems or tools that handle the storage, loading, and processing of data using graph constructs. This construct is analogous to how a relational database is responsible for not only the processing of the data but also the storage of it as well. 
+To compare and contrast the different options available we are going to be using a hypothetical scenario of analyzing Twitter data for everyone in New York City. We will use this scenario to explain what sort of questions each database type is optimized to answer and why it works best on those problems.</p>
+
+
         
-      </span>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
     
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing...</p>
   </article>
-</div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/post-modified/" rel="permalink">Post: Modified Date
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">This post has been updated and should show a modified date if used in a layout.
-
-</p>
-  </article>
-</div>
-
   
 </div>
 
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-      
-        <li><a href="/blog/">Previous</a></li>
-      
-    
-
-    
-    
-      <li><a href="/blog/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="#" class="disabled current">2</a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled"><span aria-hidden="true">Next</span></a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
-</div>
     </div>
 
     

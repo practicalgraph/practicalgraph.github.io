@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Practical Graph
-subtitle: 'Providing practical advice on all things graph'
+subtitle: 'Practical advice on all things graph'
 logo: '/assets/images/logo-small.png'
 email:
 twitter_username: username
@@ -60,9 +60,6 @@ author:
   avatar: '/assets/images/logo.png'
   bio: 'Providing practical advice about graphs and graph databases'
   links:
-    - label: 'Website'
-      icon: 'fas fa-fw fa-link'
-      url: 'https://practicalgraph.com'
     - label: 'GitHub'
       icon: 'fab fa-fw fa-github'
       url: 'https://github.com/practicalgraph'
@@ -72,9 +69,6 @@ author:
 
 footer:
   links:
-    - label: 'Website'
-      icon: 'fas fa-fw fa-link'
-      url: 'https://practicalgraph.com'
     - label: 'GitHub'
       icon: 'fab fa-fw fa-github'
       url: 'https://github.com/practicalgraph'
